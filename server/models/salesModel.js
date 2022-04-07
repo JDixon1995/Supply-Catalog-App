@@ -24,6 +24,8 @@ const salesSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-})
+},
+	{collection: 'sales'}
+)
 
 module.exports = mongoose.model('Sale', salesSchema)
