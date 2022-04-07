@@ -10,7 +10,7 @@ const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
-app.use('/api/customers', require('./routes/customerRoutes'))
+app.use('/api/sales', require('./routes/saleRoutes'))
 
 app.listen(port, () => {
 	console.log(`Server started on port ${port}`)
