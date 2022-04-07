@@ -9,4 +9,9 @@ router.get('/', async (req, res) => {
 	res.status(200).json(sales)
 })
 
+router.get('/:id', async (req, res) => {
+	const sale = await Sale.findById({ _id: req.params.id})
+	res.status(200).json(sale)
+})
+
 module.exports = router
