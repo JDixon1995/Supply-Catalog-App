@@ -23,5 +23,12 @@ router.get('/:id', async (req, res) => {
 	res.status(200).json(sale)
 })
 
+router.delete('/:id', async (req, res) => {
+	const sale = await Sale.findById({ _id: req.params.id})
+
+	await sale.remove()
+
+	res.status(200).json({_id: req.params.id})
+})
 
 module.exports = router
